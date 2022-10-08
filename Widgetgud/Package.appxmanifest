@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap mp">
+
+  <Identity
+    Name="1395dd76-945f-4905-b4e0-28e1bd92ccf6"
+    Publisher="CN=ayush"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="1395dd76-945f-4905-b4e0-28e1bd92ccf6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>Widgetgud</DisplayName>
+    <PublisherDisplayName>ayush</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="Widgetgud.App">
+      <uap:VisualElements
+        DisplayName="Widgetgud"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="Widgetgud"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap3:Extension Category="windows.appExtension">
+          <uap3:AppExtension Name="com.microsoft.windows.extension.dashboard" Id="dashboard" PublicFolder="Public" DisplayName="Dashboard Extension">
+            <uap3:Properties>
+              <Classes>
+                <WindowsUdk.UI.Shell.Dashboard.DashboardExtension>WindowsUdk.UI.Shell.Dashboard.DashboardExtension</WindowsUdk.UI.Shell.Dashboard.DashboardExtension>
+              </Classes>
+              <!-- The OS can use the version associated with the extension implementation to understand what version of the extension contract the app supports. -->
+              <Version>3.0</Version>
+              <MdmPolicy Area="NewsAndInterests" Name="AllowNewsAndInterests" />
+              <VelocityId Stage="EnabledByDefault">31072813</VelocityId>
+            </uap3:Properties>
+          </uap3:AppExtension>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
